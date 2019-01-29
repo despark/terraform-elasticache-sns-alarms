@@ -7,7 +7,7 @@ locals {
 }
 
 resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
-  alarm_name          = "cpu_utilization_too_high_${var.elasticache_cluster_id}"
+  alarm_name          = "elastic_cache_cpu_utilization_too_high_${var.elasticache_cluster_id}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "1"
   metric_name         = "CPUUtilization"
@@ -25,7 +25,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "freeable_memory_too_low" {
-  alarm_name          = "freeable_memory_too_low_${var.elasticache_cluster_id}"
+  alarm_name          = "elastic_cache_freeable_memory_too_low_${var.elasticache_cluster_id}"
   comparison_operator = "LessThanThreshold"
   evaluation_periods  = "1"
   metric_name         = "FreeableMemory"
@@ -43,7 +43,7 @@ resource "aws_cloudwatch_metric_alarm" "freeable_memory_too_low" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "swap_usage_too_high" {
-  alarm_name          = "swap_usage_too_high_${var.elasticache_cluster_id}"
+  alarm_name          = "elastic_cache_swap_usage_too_high_${var.elasticache_cluster_id}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "1"
   metric_name         = "SwapUsage"
