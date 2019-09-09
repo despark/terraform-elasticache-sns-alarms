@@ -19,7 +19,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
   alarm_actions       = ["${var.sns-topic-arn}"]
   ok_actions          = ["${var.sns-topic-arn}"]
 
-  dimensions {
+  dimensions = {
     CacheClusterId = "${var.elasticache_cluster_id}"
   }
 }
@@ -37,7 +37,7 @@ resource "aws_cloudwatch_metric_alarm" "freeable_memory_too_low" {
   alarm_actions       = ["${var.sns-topic-arn}"]
   ok_actions          = ["${var.sns-topic-arn}"]
 
-  dimensions {
+  dimensions = {
     CacheClusterId = "${var.elasticache_cluster_id}"
   }
 }
@@ -55,7 +55,7 @@ resource "aws_cloudwatch_metric_alarm" "swap_usage_too_high" {
   alarm_actions       = ["${var.sns-topic-arn}"]
   ok_actions          = ["${var.sns-topic-arn}"]
 
-  dimensions {
+  dimensions = {
     CacheClusterId = "${var.elasticache_cluster_id}"
   }
 }
